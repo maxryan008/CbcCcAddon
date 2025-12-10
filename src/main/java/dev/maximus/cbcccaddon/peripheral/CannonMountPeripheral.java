@@ -175,14 +175,12 @@ public final class CannonMountPeripheral implements IPeripheral {
             mounted.fireShot(slevel, contraptionEntity);
             out = baseResult(true, "fired");
             out.put("reason", "ok");
-            Cbcccaddon.LOGGER.info("[cbcccaddon] fire(): fired cannon at {}", pos());
         } catch (Throwable t) {
             out = baseResult(false, "exception while firing: " + t.getClass().getSimpleName());
             out.put("reason", "exception");
             if (t.getMessage() != null) {
                 out.put("error", t.getMessage());
             }
-            Cbcccaddon.LOGGER.warn("[cbcccaddon] fire(): failed to fire cannon at {}", pos(), t);
         }
 
         return out;
@@ -209,7 +207,6 @@ public final class CannonMountPeripheral implements IPeripheral {
             mount.setYaw(yaw);
             return true;
         } catch (Throwable t) {
-            Cbcccaddon.LOGGER.warn("[cbcccaddon] Failed to call setYaw on cannon mount", t);
             return false;
         }
     }
@@ -219,7 +216,6 @@ public final class CannonMountPeripheral implements IPeripheral {
             mount.setPitch(pitch);
             return true;
         } catch (Throwable t) {
-            Cbcccaddon.LOGGER.warn("[cbcccaddon] Failed to call setPitch on cannon mount", t);
             return false;
         }
     }
