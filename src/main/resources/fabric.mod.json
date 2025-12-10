@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "cbcccaddon",
+  "version": "${version}",
+  "name": "CBC CC Addon",
+  "description": "CC:Tweaked peripherals for Create Big Cannons cannon mounts",
+  "authors": [
+    "maxryan008"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.maximus.cbcccaddon.Cbcccaddon"
+    ]
+  },
+  "mixins": [
+    "cbcccaddon.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "${minecraft_version}",
+    "fabric-api": "*",
+    "computercraft": "*",
+    "createbigcannons": "*"
+  }
+}
